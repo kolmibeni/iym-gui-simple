@@ -46,22 +46,12 @@ export default {
   },
 
   created () {
-    console.log('TOLE')
-    // this.setNavTitle('Intelligent Yield Management System (Using KSA)')
-
     let vueThis = this
     const proxyurl = 'https://cors-anywhere.herokuapp.com/'
-    const url = 'http://140.116.234.166:22005/ksa/api/ksaapi'
-
-    // axios.get('/api/IYM/KsaResult/' + this.$router.params.taskId)
+    const url = 'http://' + this.$webServeUrl + '/ksa/api/ksaapi'
     axios.get(proxyurl + url)
       .then((data) => {
-        // vueThis.ksaResult = JSON.parse(JSON.parse(data).output.replace(/,"Pvalue":\[.+\]/, ''))
-        console.log(data)
-        console.log('TOLE_2')
         vueThis.ksaResult = JSON.parse(JSON.stringify(data)).data
-        console.log(vueThis.ksaResult)
-        console.log(vueThis.ksaResult.OGAResult)
 
         for (let i = 0; i < vueThis.ksaResult.OGAResult.length; i++) {
           if (vueThis.ksaResult.OGAResult[i] === vueThis.ksaResult.LassoResult[i]) {
