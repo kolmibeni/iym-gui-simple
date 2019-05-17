@@ -47,6 +47,7 @@ export default {
 
   created () {
     let vueThis = this
+    // const proxyurl = ''
     const proxyurl = 'https://cors-anywhere.herokuapp.com/'
     const url = 'http://' + this.$webServeUrl + '/ksa/api/ksaapi'
     axios.get(proxyurl + url)

@@ -112,6 +112,7 @@ export default {
       formData.append('file_id', this.file_id)
 
       this.isSubmit = true
+      // const proxyurl = ''
       const proxyurl = 'https://cors-anywhere.herokuapp.com/'
       const url = 'http://' + this.$webServeUrl + '/ksa/api/ksaapi'
 
